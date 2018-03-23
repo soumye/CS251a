@@ -1,0 +1,23 @@
+digraph g2 {
+    node[shape=record]
+    s0 [label="66"];
+    s1 [label="64"];
+    s2 [label="<a> 6|<b> 4"];
+    s3 [label="<a> 6|<b> 6"];
+    c [label="<a> 6x(6+1)|<b> 6x4"];
+    d [label="<a> 42|<b> 24"];
+    e [label="4224"];
+
+    s0 -> s3:a;
+    s0 -> s3:b;
+    s1 -> s2:a;
+    s1 -> s2:b;
+    s3:a -> c:a;
+    s2:a -> c:a;
+    s3:b -> c:b;
+    s2:b -> c:b;
+    c:a -> d:a;
+    c:b -> d:b;
+    d:a -> e;
+    d:b -> e;
+}

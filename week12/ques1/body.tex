@@ -1,0 +1,40 @@
+\section{Introduction}
+Traditional long mulitplication method  takes a lot of time and are also generally difficult to carry out accurately and fastly in the head \cite{google}. For more details on the long division method go to : \url{http://mathworld.wolfram.com/LongMultiplication.html}. There are various methods given in vedas to multiply some specific type of 2-digit numbers very quickly. Two such examples are listed below. \cite{vedas} \cite{vedic}
+
+\begin{table}[h]
+	\begin{center}
+		\begin{tabular}{|r | l|}
+			\hline
+			\textbf{TYPE} & \textbf{DESCRIPTION} \\
+			\hline
+			Type I & Two digit numbers with first digit same, and the last ones add up to 10. \\
+			\hline
+			Type II & Two digit numbers with first digit add up to 10, and the last ones are same. \\
+			\hline
+		\end{tabular}
+		\caption{Table of Types}
+	\end{center}
+\end{table}
+
+\section{Type I}
+\subsection{Algorithm}
+\label{Type I:algorithm}
+	\begin{algorithm}
+		\begin{algorithmic}
+			\Procedure{Multiplication}{$a, b$}
+				\State $c \gets a/10$ \Comment{First digit of the first number}	
+				\State $d \gets a \; mod \; 10$ \Comment{Second digit of the first number}	
+				\State $e \gets b/10$ \Comment{First digit of the second number}
+				\State $f \gets b \; mod \; 10$ \Comment{Second digit of the second number}	
+				\If{$c == e$ \& $d+f = 10$}
+					\State $Part1 \gets c \times (c+1)$
+					\State $Part2 \gets d \times f$
+					\State $Product \gets Part1 \times 100 + Part2$ \Comment{Combining the two products}
+					\State{\Return{$Product$}}
+				\Else
+					\State{\Return{Not of Type I}}
+				\EndIf
+			\EndProcedure
+		\end{algorithmic}
+	\end{algorithm}
+

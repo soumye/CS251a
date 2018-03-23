@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Soumye Singhal</title>
+    <link rel="stylesheet" type="text/css" href="files/style.css">
+    <script type="text/javascript" src="files/myjavascript.js"></script>
+  </head>
+  <body>
+
+  <h2 style="text-align: center;font-size: 40px"><span style="font-weight: bold;">Soumye Singhal
+    </span></h2>
+
+  <div style="text-align: center;">
+    <div align="center" style="font-size: 25px">Sophomore<br>
+      Department of Computer Science and Engineering<br>
+      IIT Kanpur<br>
+      India<br>
+    </div>
+    <br>
+
+  <ul>
+    <li><a class="active" href="index.html">Home</a></li>
+    <li><a href="academics.html">Academics</a></li>
+    <li><a href="interests.html">Interests</a></li>
+    <li><a href="Projects.html">Projects</a></li>
+    <li><a href="https://soumye.github.io">Blog</a></li>
+    <li><a href="https://home.iitk.ac.in/~soumye/files/resume.pdf">Resume</a></li>
+    <li><a href="ques2.html">Click Me!</a></li>
+    <li><a href="ques3.html" class="active">DATA</a></li>
+  </ul>
+  <br><br>
+
+  <form id="form2" name="form2_">
+    Name :<input type="text" name="name" id='std_name'><br><br>
+    Interest :<input type="text" name="Interest" id='area' ><br><br>
+    Faculty :<input type="text" name="Faculty" id='faculty_name'><br><br>
+    <input type="button" onclick="create_xml()" value="Submit">
+  </form> 
+
+   <br><br> 
+
+    <textarea style="width:80%; height: 300px; background: #fff" disabled="false" id="Xml_data">
+    </textarea>
+
+    <textarea align='center' style="width:80%; height: 150px; background: #fff" disabled="false" id="Xml_schema">
+        <?xml version="1.0"?>
+            <xs:schema >
+            <xs:element name="Field of interest">
+            <xs:element name="DataSet">
+                <xs:element name="Area" type="xs:string"/>        ''
+                <xs:element name="faculty_name" type="xs:string"/>
+                <xs:element name="student" type="xs:string"/>
+            </xs:element>
+            </xs:element>
+            </xs:schema>
+    </textarea>
+
+    </div>
+
+
+</body>

@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[]{algorithm}
+\usepackage{algpseudocode}
+
+\begin{document}
+
+\begin{algorithm}
+\caption{Merge Sort}
+\begin{algorithmic}[1]
+\Procedure{Combine}{$A,B$} \Comment { Merges two sorted arrays A and B }
+    \State $i \gets 0 , j \gets 0 , t \gets 0$
+    \State $n \gets size(A)+size(B)$
+    \State Initialize an array Y
+    \While{$i+j < n$}
+            \If{$A[i] \le B[j]$}
+                    \State $Y[t] \gets A[i]$
+                    \State $i \gets i+1$
+                    \If{$i = size(A)$}
+                              \State $A[i] \gets \infty $
+                    \EndIf
+            \Else
+                    \State $Y[t] \gets B[j]$
+                    \State $j \gets j+1$
+                    \If{$j = size(B)$}
+                            \State $B[j] \gets \infty $
+                    \EndIf                
+            \EndIf
+            \State $t \gets t+1$
+    \EndWhile   
+    \State \textbf{return } $Y$
+\EndProcedure
+\Statex
+\end{algorithmic}
+
+\begin{algorithmic}[1]
+\Procedure{MergeSort}{$X$}
+    \If{$size(X) > 1$}
+        \State \Call {MergeSort}{X[0,..,n/2]} \Comment{Sort the first two halves}
+        \State \Call {MergeSort}{X[n/2+1,..,n-1]} \Comment{Then combine}
+        \State $X \gets \Call {Combine}{X[0,..,n/2], X[n/2+1,..,n-1]} $
+    \EndIf
+\EndProcedure
+\end{algorithmic}
+
+\end{algorithm}
+
+\end{document}
